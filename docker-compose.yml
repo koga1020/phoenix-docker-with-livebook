@@ -12,7 +12,7 @@ services:
     environment:
       ELIXIR_BUILD_PATH: /opt/elixir-artifacts/_build
       ELIXI_DEPS_PATH: /opt/elixir-artifacts/deps
-    command: "mix phx.server"
+    command: "elixir --sname sample@app --cookie sample -S mix phx.server"
   db:
     image: postgres:14-alpine
     ports:
@@ -22,6 +22,15 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - dbdata:/var/lib/postgresql/data
+  livebook:
+    image: livebook/livebook
+    ports:
+      - 8080:8080
+    environment:
+      - LIVEBOOK_COOKIE=sample
+      - LIVEBOOK_DEFAULT_RUNTIME=attached:sample@app:sample
+      - LIVEBOOK_TOKEN_ENABLED=false
+
 volumes:
   dbdata: {}
   elixir-artifacts: {}
