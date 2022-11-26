@@ -10,9 +10,7 @@ defmodule Sample.MixProject do
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      build_path: System.get_env("ELIXIR_BUILD_PATH") || "./_build",
-      deps_path: System.get_env("ELIXIR_DEPS_PATH") || "./deps",
+      deps: deps()
     ]
   end
 
