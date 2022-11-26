@@ -32,6 +32,7 @@ services:
       - LIVEBOOK_COOKIE=sample
       - LIVEBOOK_DEFAULT_RUNTIME=attached:sample@app:sample
       - LIVEBOOK_TOKEN_ENABLED=false
+      - LIVEBOOK_HOME=/data
 
 volumes:
   dbdata: {}
