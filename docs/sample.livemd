@@ -1,0 +1,7 @@
+# Sample doc
+
+## Ecto操作例
+
+```elixir
+Sample.Repo.all(Sample.Accounts.User)
+```
